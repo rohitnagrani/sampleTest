@@ -1,4 +1,4 @@
-Following are the high level scenarios to be tested for problem in hand 
+Following are the high level scenarios to be tested for problem in hand. These are not automated as of now.
 1. Successful Login 
 2. Un successful Login 
 3. New Folder creation activity 
