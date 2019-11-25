@@ -59,12 +59,10 @@ public class HomePage {
         WebElement table = driver.findElement(By.cssSelector(tableSelector));
         List<WebElement> totalRows = table.findElements(By.tagName("tr"));
         String folderSelector = tableSelector + ">:nth-child(" + totalRows.size() + ")>:nth-child(2)>span";
-        System.out.println("\n\n folder selector -> " + folderSelector);
         return driver.findElement(By.cssSelector(folderSelector));
     }
 
     public WebElement selectUploadOption() throws Exception {
-        //return driver.findElement(By.cssSelector(".menuUpload.uploadButton"));
         new WebDriverWait(driver, 20).until(ExpectedConditions.visibilityOfElementLocated(By.className("navArrow")));
         return driver.findElement(By.id("tfid1"));
     }
@@ -76,7 +74,6 @@ public class HomePage {
     }
 
     public void verifyBothFilesAreUploaded() throws Exception {
-        //WebElement table = driver.findElement(By.cssSelector(emptyTableSelector));
         List<WebElement> totalRows = driver.findElements(By.cssSelector("div[id*=\"ml_file\"]"));
         boolean uploadStatus = ((totalRows.size() == Constants.TWO) ? true : false);
         Assert.assertTrue("Issue is file upload", uploadStatus);
